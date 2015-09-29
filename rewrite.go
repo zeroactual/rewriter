@@ -5,7 +5,7 @@ import (
 "strings"
 )
 
-func Trailing(h http.Handler) http.Handler {
+func Rewrite(h http.Handler) http.Handler {
 	fn := func (w http.ResponseWriter, r *http.Request) {
 		if r.RequestURI != "/" {
 			if r.RequestURI[len(r.RequestURI)-1:] == "/" {
